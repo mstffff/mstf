@@ -1426,7 +1426,6 @@ async function 读取config_JSON(env, hostname, userID, path, 重置配置 = fal
     }
 
     // ----------------- 修改点：环境变量覆盖配置 -----------------
-   // ----------------- 修改点：环境变量覆盖配置 -----------------
     // 处理 SUB_REMOTE 环境变量
     if (env.SUB_REMOTE || env.SUB || env.SUBAPI) {
         config_JSON.优选订阅生成.SUB = env.SUB_REMOTE || env.SUB || env.SUBAPI;
@@ -1435,10 +1434,6 @@ async function 读取config_JSON(env, hostname, userID, path, 重置配置 = fal
     // 处理 ECH 环境变量
     if (env.ECH) {
         config_JSON.ECH = (env.ECH === 'true' || env.ECH === true);
-    }
-    // 【新增】处理 PROXYIP 环境变量，使其显示在 path 中
-    if (env.PROXYIP) {
-        config_JSON.反代.PROXYIP = env.PROXYIP;
     }
 
     config_JSON.HOST = host;
